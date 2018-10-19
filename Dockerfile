@@ -5,6 +5,7 @@ RUN apt-get update \
     && apt-get -y install musl musl-dev musl-tools patch \
     && git clone https://github.com/alibaba/Dragonfly.git \
     && cd Dragonfly \
+    && git checkout v0.2.0 \
     && patch -p1 < ../musl.patch \
     && cd build \
     && ./build.sh client
